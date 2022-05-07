@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        width: 70%;
+        margin: auto;
+      }
+      #container>div>img{
+          height: 150px;
+          width: 200px;
+      }
+      #container>div{
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        border-radius: 10px;
+        margin: 10px 10px 10px 10px;
+        padding: 20px 20px 20px 20px;
+      }
+      @media all and (min-width: 80px) and (max-width: 400px) {
+        #container {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1></h1>
+    <div id="container"></div>
+  </body>
+</html>
+
+<script>
+  var Product = [
+    {
+      image_url:
+        "https://cdn01.pharmeasy.in/dam/products_otc/J24391/horlicks-mothers-plus-vanilla-refill-500-g-1-1641791163.jpg",
+      name: "Horlicks Mother's Plus Vanilla Refill 500 G",
+      strikedoffprice: "₹540",
+      price: 459.00,    
+    },
+    {
+      image_url:
+        "https://cdn01.pharmeasy.in/dam/products_otc/Z11343/horlicks-junior-health-nutrition-drink-vanilla-1-kg-2-1643876415.jpg",
+      name: "Horlicks Junior Health & Nutrition Drink Vanilla, 1 kg",
+      price: "₹499",
+      strikedoffprice: 459.10,
+    },
+    {
+      image_url:
+        "https://cdn01.pharmeasy.in/dam/products_otc/S97147/horlicks-mothers-plus-kesar-refill-500-g-1-1643876693.jpg",
+      name: " Horlicks Mother's Plus Kesar Refill 500 G",
+      price: "₹540",
+      strikedoffprice: 486,
+    },
+    {
+      image_url:
+        "https://cdn01.pharmeasy.in/dam/products_otc/I04915/horlicks-health-nutrition-drink-jar-500-g-2-1643882490.jpg",
+      name: "Horlicks Health & Nutrition Drik Jar, 500 G",
+      price: "₹399",
+      strikedoffprice: 799,
+    },
+    {
+      image_url:
+        "https://cdn01.pharmeasy.in/dam/products_otc/Q56745/standard-horlicks-1kg-plastic-container-2-1641790588.jpg",
+      name: "Standard Horlicks 1kg Plastic Container",
+      price: 485.00,
+    },
+    {
+      image_url:
+        "https://cdn01.pharmeasy.in/dam/products_otc/J47037/horlicks-health-nutrition-drink-pouch-500-g-2-1641790705.jpg",
+      name: "Horlicks Health & Nutrition Drink Pouch, 500 G",
+      price: 199,
+
+    },
+    {
+      image_url:
+        "https://cdn01.pharmeasy.in/dam/products_otc/F52227/horlicks-womens-plus-caramel-jar-400-g-2-1643882005.jpg",
+      name: "Horlicks Women's Plus Caramel Jar, 400 G",
+      price: 310,
+    },
+    {
+      image_url:
+        "https://cdn01.pharmeasy.in/dam/products_otc/091750/horlicks-health-nutrition-drink-chocolate-jar-200-g-2-1641398929.jpg",
+      name: "MEN'S REEBOK TRAINING  POLO T-SHIRTS TEE  ",
+      price: 110,
+    },
+    {
+      image_url:
+        "https://cdn01.pharmeasy.in/dam/products_otc/091760/horlicks-health-nutrition-drink-chocolate-carton-500-g-1-1649248822.jpg",
+      name: "Horlicks Health & Nutrition Drink, Chocolate, Carton 500 G",
+      price: 215,
+    },
+  ];
+  var cartData = JSON.parse(localStorage.getItem("cart")) || [];
+  Product.map(function (elem) {
+    var box = document.createElement("div");
+
+    var img = document.createElement("img");
+    img.src = elem.image_url;
+
+    var name = document.createElement("p");
+    name.textContent = elem.name;
+
+    var price = document.createElement("p");
+    price.innerText = elem.price;
+
+    var btn = document.createElement("button");
+    btn.innerText = "Add to Cart";
+    btn.addEventListener("click", function () {
+      addToCart(elem);
+    });
+
+    box.append(img, name, price, btn);
+
+    document.querySelector("#container").append(box);
+  });
+
+  function addToCart(elem) {
+    console.log(elem);
+    cartData.push(elem);
+    localStorage.setItem("cart", JSON.stringify(cartData));
+    alert("item added to cart");
+  }
+</script>

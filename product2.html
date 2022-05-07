@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        width: 70%;
+        margin: auto;
+      }
+      #container>div>img{
+          height: 150px;
+          width: 200px;
+      }
+      #container>div{
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        border-radius: 10px;
+        margin: 10px 10px 10px 10px;
+        padding: 20px 20px 20px 20px;
+      }
+      @media all and (min-width: 80px) and (max-width: 400px) {
+        #container {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1></h1>
+    <div id="container"></div>
+  </body>
+</html>
+
+<script>
+  var Product = [
+    {
+      image_url:
+        "https://cdn01.pharmeasy.in/dam/products_otc/U58783/liveasy-wellness-immunity-pro-vitamin-c-zinc-with-herbal-immunity-blend-60-tablets-2-1643876968.jpg",
+      name: "Liveasy Wellness Immunity Pro-Vitamin C & Zinc-With Herbal...",
+      strikedoffprice: "₹480",
+      price: "₹410.75",    
+    },
+    {
+      image_url:
+        "https://cdn01.pharmeasy.in/dam/products_otc/O37141/liveasy-essentials-mens-diabetic-orthopedic-velcro-slippers-black-size-uk-10-2-1641791966.jpg",
+      name: "Liveasy Essentials Men's Diabetic & Orthopedic Velcro Slippers-Black...",
+      price: "₹670",
+      strikedoffprice: "₹499.10",
+    },
+    {
+      image_url:
+        "https://cdn01.pharmeasy.in/dam/products_otc/J94150/liveasy-essentials-mens-diabetic-orthopedic-velcro-slippers-black-size-uk-7-2-1641791577.jpg",
+      name: "Liveasy Essentials Men's Diabetic & Orthopedic Velcro Slippers-Black...",
+      price: "₹570",
+      strikedoffprice: "₹466",
+    },
+    {
+      image_url:
+        "https://cdn01.pharmeasy.in/dam/products_otc/S01055/liveasy-essentials-mens-diabetic-orthopedic-velcro-slippers-black-size-uk-9-2-1632782337.jpg",
+      name: "Liveasy Essentials Men's Diabetic & Orthopedic Velcro Slippers-Black...",
+      price: "₹399",
+      strikedoffprice: "₹799",
+    },
+    {
+      image_url:
+        "https://cdn01.pharmeasy.in/dam/products_otc/S01055/liveasy-essentials-mens-diabetic-orthopedic-velcro-slippers-black-size-uk-9-2-1632782337.jpg",
+      name: "Liveasy Essentials Men's Diabetic & Orthopedic Velcro Slippers-Black...",
+      price: "₹485.00",
+    },
+    {
+      image_url:
+        "https://cdn01.pharmeasy.in/dam/products_otc/D52223/liveasy-foods-healthy-roasted-seed-mix-blend-of-6-fibre-rich-healthy-roasted-seeds-2-1643882920.jpg",
+      name: "Liveasy Foods Healthy Roasted Seed Mix -Blend Of & Fibre Rich...",
+      price: "₹199.50",
+
+    },
+    {
+      image_url:
+        "https://cdn01.pharmeasy.in/dam/products_otc/J34580/liveasy-wellness-biotin-10000mcg-with-calcium-prevents-hair-fall-bottle-of-60-2-1643880317.jpg",
+      name:"Liveasy Wellness Biotin 10000mcg With Calcium-Prevents Hair Fall...",
+      price: "₹499.50",
+    },
+    {
+      image_url:
+        "https://cdn01.pharmeasy.in/dam/products_otc/U58914/liveasy-wellness-multivitamin-women-with-women-wellness-builds-immunity-bottle-of-60-2-1641788824.jpg",
+      name: "Liveasy Wellness Multivitamin Women-With Women Wellness...",
+      price: "₹449.50",
+    },
+    {
+      image_url:
+        "https://cdn01.pharmeasy.in/dam/products_otc/091760/horlicks-health-nutrition-drink-chocolate-carton-500-g-1-1649248822.jpg",
+      name: "Liveasy Wellness Multivitamin 50+ With Brain And Joint Health Bien...",
+      price: "₹449.50",
+    },
+  ];
+  var cartData = JSON.parse(localStorage.getItem("cart")) || [];
+  Product.map(function (elem) {
+    var box = document.createElement("div");
+
+    var img = document.createElement("img");
+    img.src = elem.image_url;
+
+    var name = document.createElement("p");
+    name.textContent = elem.name;
+
+    var price = document.createElement("p");
+    price.innerText = elem.price;
+
+    var btn = document.createElement("button");
+    btn.innerText = "Add to Cart";
+    btn.addEventListener("click", function () {
+      addToCart(elem);
+    });
+
+    box.append(img, name, price, btn);
+
+    document.querySelector("#container").append(box);
+  });
+
+  function addToCart(elem) {
+    console.log(elem);
+    cartData.push(elem);
+    localStorage.setItem("cart", JSON.stringify(cartData));
+    alert("item added to cart");
+  }
+</script>

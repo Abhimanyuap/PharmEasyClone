@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      #navbar {
+        display: flex;
+        justify-content: space-around;
+        background-color: teal;
+        padding: 10px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+      #navbar a:hover {
+        color: white;
+      }
+      #navbar a {
+        cursor: pointer;
+      }
+      h2{
+          color: blue;
+          text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="top">
+        <div class="child">
+            <div class="child1">
+            <img class="logo"
+             src="https://assets.pharmeasy.in/web-assets/dist/fca22bc9.png" 
+             alt=""width="20%" height="10%">
+            </div>
+            <div class="child2"> 
+                <div >
+                    <span class="span"  role="button">Select Pincode</span>
+                </div>
+                <label>
+                <div>
+                    <input class="input" type="search" placeholder="Search medicines/Healthcare Products">
+                </div>
+            </label>
+            </div>
+        </div>
+        <div class="chill">
+              <div class="nav">
+                <a class="navbar-brand" href="cart.html">Order Medicines</a>
+                <a class="navbar-brand" href="">Healthcare Products</a>
+                <a class="navbar-brand" href="">Lab Tests</a>
+                <a class="navbar-brand" href="">RTPR</a>
+              </div>
+              <div class="nav">
+                <a class="navbar-brand" href="">
+                    <img src="https://assets.pharmeasy.in/web-assets/dist/275c07e1.svg">
+                    Offers</a>
+                <a class="navbar-brand" href="C:\Users\ABHIMANYU SINGH\OneDrive\Desktop\pharmeasy\signup.html">
+                    <img src="https://assets.pharmeasy.in/web-assets/dist/5eb42971.svg">
+                     Login/Signup
+                    </a>
+                <a class="navbar-brand" href="C:\Users\ABHIMANYU SINGH\OneDrive\Desktop\pharmeasy\cart.html">
+                    <img src="	https://assets.pharmeasy.in/web-assets/dist/21b0b5ba.svg">
+                    Cart</a>
+              </div>
+        </div>
+    </div>
+    <h1>Signup page</h1>
+    <form>
+      <input id="email" type="text" placeholder="Enter email" />
+      <input id="pass" type="password" placeholder="Enter password" />
+      <input id="user" type="text" placeholder="Enter username" />
+      <input type="submit" />
+    </form>
+    <a href="login.html"><h2>Already have a Account?Login</h2></a>
+  </body>
+</html>
+
+<script>
+  document.querySelector("form").addEventListener("submit", signUpFun);
+
+  var userData = JSON.parse(localStorage.getItem("userCreds"))||[]
+  function signUpFun() {
+    event.preventDefault();
+
+    var userObj = {
+      email: document.querySelector("#email").value,
+      password: document.querySelector("#pass").value,
+      userName: document.querySelector("#user").value,
+    };
+    //console.log(userObj);
+    userData.push(userObj);
+    //console.log(userData)
+    localStorage.setItem("userCreds",JSON.stringify(userData))
+
+  }
+</script>

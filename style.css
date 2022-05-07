@@ -1,0 +1,324 @@
+#top
+{
+    background-color: teal;
+    height: auto;
+  
+}
+.child{
+    display: flex;
+    height: 80px;
+    padding-top: 20px;
+    justify-content: space-around;
+}
+.chill{
+    display: flex;
+    height: 40px;
+    padding-top: 20px;
+    justify-content: space-between;
+
+}
+
+.child2{
+   display: flex;
+   width: 70%;
+   margin-left: -20px;
+}
+.child2>:nth-child(2){
+    width: 70%;
+
+}
+.logo{
+    height: 80px;
+    width: 150px;
+}
+.span
+{
+    background-color: white;
+    height: 28.5px;
+    color: teal;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    padding: 15px 15px 15px 15px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border: 0.5px solid black;
+    border-right: 0px;
+}
+.input{
+    height: 60px;
+    width: 100%;
+    background-color: 0px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 0px;
+    border: 0.5px solid black;
+    border-left: 0px;
+    font-size: 20px;
+    padding-left: 20px;
+}
+.chill>.nav:nth-child(1)
+{
+     width: 62%;
+     justify-content: flex-end;
+     display: flex;
+}
+.chill>.nav:nth-child(2)
+{
+    padding-right: 10px;
+}
+.nav>a{
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+/* slider */
+
+@keyframes slidy {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; } 
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+}
+
+body { margin: 0; } 
+div#slider { overflow: hidden; }
+div#slider figure img { width: 20%; float: left; }
+div#slider figure { 
+position: relative;
+width: 500%;
+margin: 0;
+left: 0;
+text-align: left;
+font-size: 0;
+animation: 30s slidy infinite; 
+}
+div#slider {
+overflow: hidden;      
+}   
+
+#pro{
+width: 1200px;
+height: 150px;
+display:flex;
+margin: auto;
+gap: 20px;
+margin-top: 30px;
+}
+#pro>div{
+height: 100%;
+width: 32%;   
+}
+.pos{
+height: 15%;
+width: 50%;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+padding-right: 20px;
+color: white;
+background-image:url(	https://assets.pharmeasy.in/web-assets/dist/1602b4ce.svg) ;
+border-top-left-radius: 10px;
+}
+.map{
+background-image: url(https://assets.pharmeasy.in/web-assets/dist/7c645a8d.png?dim=186x0&dpr=1.2000000476837158&q=100);
+background-size: 100% ;
+background-repeat: no-repeat;
+border-radius: 10px 10px 10px 10px;
+border: 0.5px solid gray;
+}
+.map>div:nth-child(1){
+height: 60%;
+ background-color: aquamarine; 
+ border-radius: 10px;
+}
+.map>div:nth-child(){
+height: 60%;
+ background-color: aquamarine; 
+}
+.map>div:nth-child(1){
+height: 60%;
+ background-color: aquamarine; 
+}
+.mac{
+background-image: url(https://assets.pharmeasy.in/web-assets/dist/c7c7095b.png?dim=186x0&dpr=1.2000000476837158&q=100);
+background-size: 100% ;
+width: 50px;
+background-repeat: no-repeat;
+border-radius: 10px 10px 10px 10px;
+border: 0.5px solid gray;
+}
+.mas{
+background-image: url(https://assets.pharmeasy.in/web-assets/dist/e1d3ac1c.png?dim=186x0&dpr=1.2000000476837158&q=100);
+background-size: 100% ;
+background-repeat: no-repeat;
+border-radius: 10px 10px 10px 10px;
+border: 0.5px solid gray;
+}
+.map>div>h1{
+margin-left: 15px;
+}
+.butto{
+height: 40px;
+width: auto;
+font-size: 20px;
+font-weight: bold;
+margin-left: 30px;
+background-color: teal;
+border: 0px;
+border-radius: 10px;
+color: white;
+}
+#bos{
+height: 120px;
+width: 100%;
+margin-top: 100px;
+border: 1px solid black;
+display: flex;
+background-color: #a291fa;
+background-image: url(https://assets.pharmeasy.in/web-assets/dist/f5c40209.svg);
+}
+
+.mee{
+width: 25%;
+height: 100%;
+border-top-right-radius: 10px;
+border-bottom-right-radius: -20px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.mee>img{
+width: 70%;
+height: 40%;
+}
+.zee{
+width: 50%;
+}
+.zee>p{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+.me{
+    height: 118%;
+    margin-top: -50px;
+    margin-left: 20px;
+}
+.me>img{
+    height: 120%;
+    width: 60%;
+    margin-bottom: -50px;
+}
+#off{
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+#off>img{
+    margin-right: 10px;
+    height: 30px;
+    margin-top: 10px;
+}
+#offer{
+    display: flex;
+    gap :20px;
+    margin: auto;
+    width: auto;
+}
+#offer>div{
+    display: flex;
+    width: 270px;
+    margin: auto;
+   
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+}
+#offer img{
+    height:60px;
+    margin-top: 15px;
+    margin-right: 5px;
+    margin-left: 10px;
+}
+#bob{
+    height: 200px;
+    width: 100%;
+    background-color:#b7d9fd;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+#pud{
+    display: flex;
+    gap: 10px;
+}
+#pud>div>a>img{
+    height: 180px;
+    width:150px;
+}
+#pud>div>img{
+    height: 180px;
+    width:150px;
+}
+#hg{
+    display: flex;
+    margin-top: 40px;
+}
+#hg>div{
+    margin: auto;
+}
+#review{
+    display: flex;
+}
+#review>div{
+    width: 23%;
+    gap: 10px;
+    margin-left: 10px;
+    
+}
+#review>div>div{
+    height: 150px;
+    padding: 25px 10px 10px 10px;
+    background-color: rgb(238, 255, 214);
+     background-image: url(	https://assets.pharmeasy.in/web-assets/dist/d29d41d8.svg);
+     background-repeat: no-repeat;
+}
+#hg{
+    margin-left: 10px;
+}
+#footer1{
+    background-color: rgb(235, 235, 235);
+    height: 250px;
+    padding: 30px 0px 30px 40px;
+    margin-top: 40px;
+}
+#footer1>div{
+    display: flex;
+    gap: 20px;
+}
+#footer1>div>img{
+    height: 50px;
+    width: 120px;
+}
+#footer1>h3{
+    margin-top: 50px;
+}
+#footer2{
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(1,350px);
+    background-color: rgb(244, 241, 241);
+    padding: 0px 0px 40px 30px;
+}
+
+#footer2>div>p{
+    margin-top: -20px;
+    color: gray;
+}
